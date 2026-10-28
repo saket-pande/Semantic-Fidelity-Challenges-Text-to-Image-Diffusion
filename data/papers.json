@@ -1,0 +1,4374 @@
+{
+ "meta": {
+  "title": "Semantic Fidelity Challenges in Diffusion-Based Text-to-Image Models: A Survey",
+  "authors": [
+   "Saket Pandey",
+   "Pranav Singh Chib",
+   "Pravendra Singh"
+  ],
+  "affiliation": "Department of Computer Science and Engineering, Indian Institute of Technology Roorkee",
+  "paper_url": "",
+  "journal": "Under review",
+  "year": 2026,
+  "repo": "USERNAME/Awesome-Semantic-Fidelity-T2I"
+ },
+ "taxonomy": [
+  {
+   "id": "surveys",
+   "title": "Related Surveys",
+   "icon": "📚",
+   "paper_section": null,
+   "subsections": [
+    {
+     "id": "surveys",
+     "title": "Surveys on diffusion models and controllable generation"
+    }
+   ]
+  },
+  {
+   "id": "foundations",
+   "title": "Foundations",
+   "icon": "🧱",
+   "paper_section": "2",
+   "subsections": [
+    {
+     "id": "2.1",
+     "title": "Generative models & diffusion"
+    },
+    {
+     "id": "2.2",
+     "title": "Attention & conditioning mechanisms"
+    },
+    {
+     "id": "2.3",
+     "title": "Latent-space diffusion"
+    },
+    {
+     "id": "2.4",
+     "title": "Evolution of text-to-image models"
+    },
+    {
+     "id": "2.5",
+     "title": "State-of-the-art foundation models"
+    }
+   ]
+  },
+  {
+   "id": "object",
+   "title": "Object-Level Fidelity",
+   "icon": "🧩",
+   "paper_section": "5",
+   "subsections": [
+    {
+     "id": "5.2",
+     "title": "Underlying failure mechanisms"
+    },
+    {
+     "id": "5.3",
+     "title": "Training-time mitigation"
+    },
+    {
+     "id": "5.4.1",
+     "title": "Inference: denoising-time interventions"
+    },
+    {
+     "id": "5.4.2",
+     "title": "Inference: auxiliary guidance"
+    },
+    {
+     "id": "5.4.3",
+     "title": "Inference: prompt / embedding manipulation"
+    }
+   ]
+  },
+  {
+   "id": "attribute",
+   "title": "Attribute-Level Fidelity",
+   "icon": "🎨",
+   "paper_section": "6",
+   "subsections": [
+    {
+     "id": "6.2",
+     "title": "Underlying failure mechanisms"
+    },
+    {
+     "id": "6.3",
+     "title": "Training-time mitigation"
+    },
+    {
+     "id": "6.4.1",
+     "title": "Inference: denoising-time interventions"
+    },
+    {
+     "id": "6.4.2",
+     "title": "Inference: syntax-guided attention refinement"
+    },
+    {
+     "id": "6.4.3",
+     "title": "Inference: prompt / embedding manipulation"
+    },
+    {
+     "id": "6.4.4",
+     "title": "Inference: layout-guided"
+    },
+    {
+     "id": "6.4.5",
+     "title": "Inference: LLM-guided"
+    }
+   ]
+  },
+  {
+   "id": "numerical",
+   "title": "Numerical-Level Fidelity",
+   "icon": "🔢",
+   "paper_section": "7",
+   "subsections": [
+    {
+     "id": "7.2",
+     "title": "Underlying failure mechanisms & object counting"
+    },
+    {
+     "id": "7.3",
+     "title": "Training-time mitigation"
+    },
+    {
+     "id": "7.4.1",
+     "title": "Inference: denoising-time interventions"
+    },
+    {
+     "id": "7.4.2",
+     "title": "Inference: auxiliary guidance"
+    }
+   ]
+  },
+  {
+   "id": "relational",
+   "title": "Relational-Level Fidelity",
+   "icon": "🧭",
+   "paper_section": "8",
+   "subsections": [
+    {
+     "id": "8.2",
+     "title": "Underlying failure mechanisms"
+    },
+    {
+     "id": "8.3",
+     "title": "Training-time mitigation"
+    },
+    {
+     "id": "8.4.1",
+     "title": "Inference: denoising-time approaches"
+    },
+    {
+     "id": "8.4.2",
+     "title": "Inference: layout-guidance approaches"
+    },
+    {
+     "id": "8.4.3",
+     "title": "Inference: LLM-guidance approaches"
+    }
+   ]
+  },
+  {
+   "id": "metrics",
+   "title": "Evaluation Metrics",
+   "icon": "📏",
+   "paper_section": "9",
+   "subsections": [
+    {
+     "id": "9.1",
+     "title": "Visual fidelity metrics"
+    },
+    {
+     "id": "9.2",
+     "title": "Semantic fidelity metrics"
+    }
+   ]
+  },
+  {
+   "id": "datasets",
+   "title": "Prompt Datasets & Benchmarks",
+   "icon": "🗂️",
+   "paper_section": "10",
+   "subsections": [
+    {
+     "id": "10.1",
+     "title": "Image-caption datasets"
+    },
+    {
+     "id": "10.2",
+     "title": "Missing-object & attribute-binding datasets"
+    },
+    {
+     "id": "10.3",
+     "title": "Spatial & numerical reasoning datasets"
+    },
+    {
+     "id": "10.4",
+     "title": "Overall compositionality benchmarks"
+    }
+   ]
+  },
+  {
+   "id": "beyond",
+   "title": "Beyond the Four Levels",
+   "icon": "🔭",
+   "paper_section": "11",
+   "subsections": [
+    {
+     "id": "11",
+     "title": "General compositionality & future directions"
+    }
+   ]
+  }
+ ],
+ "papers": [
+  {
+   "id": 1,
+   "name": "",
+   "title": "Generative Adversarial Nets",
+   "authors": "I. J. Goodfellow et al.",
+   "year": 2014,
+   "venue": "NeurIPS",
+   "url": "https://proceedings.neurips.cc/paper/5423-generative-adversarial-nets",
+   "url_label": "NeurIPS",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.1",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 2,
+   "name": "",
+   "title": "Auto-Encoding Variational Bayes",
+   "authors": "D. P. Kingma et al.",
+   "year": 2013,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/1312.6114",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "2.1",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 3,
+   "name": "DDPM",
+   "title": "Denoising Diffusion Probabilistic Models",
+   "authors": "J. Ho et al.",
+   "year": 2020,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2006.11239",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.1",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1",
+    "2.1.1"
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Improved DDPM",
+   "title": "Improved Denoising Diffusion Probabilistic Models",
+   "authors": "A. Q. Nichol et al.",
+   "year": 2021,
+   "venue": "ICML",
+   "url": "https://arxiv.org/abs/2102.09672",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.1",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1",
+    "2.3"
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Stable Diffusion (LDM)",
+   "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+   "authors": "R. Rombach et al.",
+   "year": 2022,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2112.10752",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.4",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1",
+    "2.2",
+    "2.3",
+    "2.4"
+   ]
+  },
+  {
+   "id": 6,
+   "name": "CLIP",
+   "title": "Learning Transferable Visual Models from Natural Language Supervision",
+   "authors": "A. Radford et al.",
+   "year": 2021,
+   "venue": "ICML",
+   "url": "https://arxiv.org/abs/2103.00020",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "1",
+    "2.2",
+    "9.2"
+   ]
+  },
+  {
+   "id": 7,
+   "name": "ControlNet",
+   "title": "Adding Conditional Control to Text-to-Image Diffusion Models",
+   "authors": "L. Zhang et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2302.05543",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1",
+    "2.2"
+   ]
+  },
+  {
+   "id": 8,
+   "name": "GLIDE",
+   "title": "GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models",
+   "authors": "A. Nichol et al.",
+   "year": 2021,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2112.10741",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "2.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "1",
+    "2.4",
+    "10.4"
+   ]
+  },
+  {
+   "id": 9,
+   "name": "DALL·E 2",
+   "title": "Hierarchical Text-Conditional Image Generation with CLIP Latents",
+   "authors": "A. Ramesh et al.",
+   "year": 2022,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2204.06125",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "2.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "1",
+    "2.4",
+    "10.4"
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Imagen",
+   "title": "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding",
+   "authors": "C. Saharia et al.",
+   "year": 2022,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2205.11487",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "1",
+    "2.2",
+    "2.4",
+    "10.4"
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Attend-and-Excite",
+   "title": "Attend-and-Excite: Attention-Based Semantic Guidance for Text-to-Image Diffusion Models",
+   "authors": "H. Chefer et al.",
+   "year": 2023,
+   "venue": "SIGGRAPH (ACM TOG)",
+   "url": "https://arxiv.org/abs/2301.13826",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://yuval-alaluf.github.io/Attend-and-Excite/",
+   "section": "5.4.1",
+   "levels": [
+    "attribute",
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Dataset",
+    "Inference-time",
+    "Metric",
+    "Training-time"
+   ],
+   "cited_in": [
+    "1",
+    "2.2",
+    "4",
+    "5",
+    "5.2",
+    "5.3",
+    "5.4.1",
+    "5.5",
+    "6.2",
+    "9.2",
+    "10.2"
+   ]
+  },
+  {
+   "id": 12,
+   "name": "SynGen",
+   "title": "Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence Through Attention Map Alignment",
+   "authors": "R. Rassin et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "url": "https://openreview.net/forum?id=AOKU4nRw1W",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "6.4.2",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Dataset",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "4",
+    "6",
+    "10.2"
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Counting Guidance",
+   "title": "Counting Guidance for High Fidelity Text-to-Image Synthesis",
+   "authors": "W. Kang et al.",
+   "year": 2025,
+   "venue": "WACV",
+   "url": "https://arxiv.org/abs/2306.17567",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.4.1",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "4",
+    "7",
+    "7.4.1",
+    "7.5"
+   ]
+  },
+  {
+   "id": 14,
+   "name": "VISOR",
+   "title": "Benchmarking Spatial Relationships in Text-to-Image Generation",
+   "authors": "T. Gokhale et al.",
+   "year": 2022,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2212.10015",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Dataset",
+    "Metric"
+   ],
+   "cited_in": [
+    "1",
+    "4",
+    "9.2",
+    "10.3"
+   ]
+  },
+  {
+   "id": 15,
+   "name": "A-STAR",
+   "title": "A-STAR: Test-Time Attention Segregation and Retention for Text-to-Image Synthesis",
+   "authors": "A. Agarwal et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2306.14544",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "5.2",
+    "5.4.1"
+   ]
+  },
+  {
+   "id": 16,
+   "name": "",
+   "title": "Attention Overlap Is Responsible for the Entity Missing Problem in Text-to-Image Diffusion Models!",
+   "authors": "A. M. Oriyad et al.",
+   "year": 2025,
+   "venue": "TMLR",
+   "url": "https://openreview.net/forum?id=Xv3ZrFayIO",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Dataset",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "5.2",
+    "5.4.1",
+    "10.2"
+   ]
+  },
+  {
+   "id": 17,
+   "name": "TEBOpt",
+   "title": "A Cat Is a Cat (Not a Dog!): Unraveling Information Mix-Ups in Text-to-Image Encoders Through Causal Analysis and Embedding Optimization",
+   "authors": "C.-Y. Chen et al.",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2410.00321",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "5.2",
+    "5.4.3",
+    "5.5"
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Magnet",
+   "title": "Magnet: We Never Know How Text-to-Image Diffusion Models Work, Until We Learn How Vision-Language Models Function",
+   "authors": "C. Zhuang et al.",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "url": "https://openreview.net/forum?id=4mzGiMooXM",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "6.4.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "2.2",
+    "6.4.3",
+    "6.5"
+   ]
+  },
+  {
+   "id": 19,
+   "name": "SPRIGHT",
+   "title": "Getting It Right: Improving Spatial Consistency in Text-to-Image Models",
+   "authors": "A. Chatterjee et al.",
+   "year": 2025,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2404.01197",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Analysis",
+    "Training-time"
+   ],
+   "cited_in": [
+    "1",
+    "8.2",
+    "8.3"
+   ]
+  },
+  {
+   "id": 20,
+   "name": "Divide-and-Bind",
+   "title": "Divide & Bind Your Attention for Improved Generative Semantic Nursing",
+   "authors": "Y. Li et al.",
+   "year": 2023,
+   "venue": "BMVC",
+   "url": "https://arxiv.org/abs/2307.10864",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.1",
+   "levels": [
+    "numerical",
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "5.4.1",
+    "7.2"
+   ]
+  },
+  {
+   "id": 21,
+   "name": "CoMat",
+   "title": "CoMat: Aligning Text-to-Image Diffusion Model with Image-to-Text Concept Matching",
+   "authors": "D. Jiang et al.",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "url": "https://openreview.net/forum?id=OW1ldvMNJ6",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "5.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "1",
+    "5.3",
+    "5.5"
+   ]
+  },
+  {
+   "id": 22,
+   "name": "VersaT2I",
+   "title": "VersaT2I: Improving Text-to-Image Models with Versatile Reward",
+   "authors": "J. Guo et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2403.18493",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "5.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "1",
+    "5.3",
+    "5.5"
+   ]
+  },
+  {
+   "id": 23,
+   "name": "DOS",
+   "title": "DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation",
+   "authors": "D. Byun et al.",
+   "year": 2026,
+   "venue": "AAAI",
+   "url": "https://arxiv.org/abs/2510.14376",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "5.4.3",
+    "5.5"
+   ]
+  },
+  {
+   "id": 24,
+   "name": "ToMe",
+   "title": "Token Merging for Training-Free Semantic Binding in Text-to-Image Synthesis",
+   "authors": "taihang Hu et al.",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "url": "https://openreview.net/forum?id=tRRWoa9e80",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "6.4.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Dataset",
+    "Inference-time",
+    "Training-time"
+   ],
+   "cited_in": [
+    "1",
+    "6",
+    "6.3",
+    "6.4.3",
+    "6.5",
+    "10.2"
+   ]
+  },
+  {
+   "id": 25,
+   "name": "LayoutGPT",
+   "title": "LayoutGPT: Compositional Visual Planning and Generation with Large Language Models",
+   "authors": "W. Feng et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "url": "https://openreview.net/forum?id=Xu8aG5Q8M3",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "7.4.2",
+   "levels": [
+    "numerical",
+    "relational"
+   ],
+   "types": [
+    "Dataset",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "1",
+    "7.4.2",
+    "7.5",
+    "8.4.3",
+    "10.3"
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Inception Score",
+   "title": "Improved Techniques for Training GANs",
+   "authors": "T. Salimans et al.",
+   "year": 2016,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/1606.03498",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "1",
+    "9",
+    "9.1"
+   ]
+  },
+  {
+   "id": 27,
+   "name": "FID",
+   "title": "GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium",
+   "authors": "M. Heusel et al.",
+   "year": 2017,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/1706.08500",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "1",
+    "9",
+    "9.1"
+   ]
+  },
+  {
+   "id": 28,
+   "name": "CLIPScore",
+   "title": "CLIPScore: A Reference-Free Evaluation Metric for Image Captioning",
+   "authors": "J. Hessel et al.",
+   "year": 2021,
+   "venue": "EMNLP",
+   "url": "https://aclanthology.org/2021.emnlp-main.595/",
+   "url_label": "ACL",
+   "url_source": "paper",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "1",
+    "9.2"
+   ]
+  },
+  {
+   "id": 29,
+   "name": "T2I-CompBench",
+   "title": "T2I-CompBench: A Comprehensive Benchmark for Open-World Compositional Text-to-Image Generation",
+   "authors": "K. Huang et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f8ad010cdd9143dbb0e9308c093aff24-Abstract.html",
+   "url_label": "NeurIPS",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.4",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Dataset",
+    "Metric"
+   ],
+   "cited_in": [
+    "1",
+    "5.5",
+    "9.2",
+    "10.4"
+   ]
+  },
+  {
+   "id": 30,
+   "name": "HRS-Bench",
+   "title": "HRS-Bench: Holistic, Reliable and Scalable Benchmark for Text-to-Image Models",
+   "authors": "E. M. Bakr et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://doi.ieeecomputersociety.org/10.1109/ICCV51070.2023.01834",
+   "url_label": "IEEE",
+   "url_source": "paper",
+   "code": "",
+   "section": "10.4",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "1",
+    "5.5",
+    "10.4"
+   ]
+  },
+  {
+   "id": 31,
+   "name": "",
+   "title": "Diffusion Models: A Comprehensive Survey of Methods and Applications",
+   "authors": "L. Yang et al.",
+   "year": 2023,
+   "venue": "ACM CSUR",
+   "url": "https://arxiv.org/abs/2209.00796",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "surveys",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 32,
+   "name": "",
+   "title": "A Survey on Generative Diffusion Models",
+   "authors": "H. Cao et al.",
+   "year": 2024,
+   "venue": "TKDE",
+   "url": "https://arxiv.org/abs/2209.02646",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "surveys",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 33,
+   "name": "",
+   "title": "Comprehensive Exploration of Diffusion Models in Image Generation: A Survey",
+   "authors": "H. Chen et al.",
+   "year": 2025,
+   "venue": "AI Review",
+   "url": "https://link.springer.com/article/10.1007/s10462-025-11110-3",
+   "url_label": "Springer",
+   "url_source": "searched",
+   "code": "",
+   "section": "surveys",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 34,
+   "name": "",
+   "title": "Diffusion Models in Vision: A Survey",
+   "authors": "F.-A. Croitoru et al.",
+   "year": 2023,
+   "venue": "TPAMI",
+   "url": "https://arxiv.org/abs/2209.04747",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "surveys",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 35,
+   "name": "",
+   "title": "Diffusion Models in Low-Level Vision: A Survey",
+   "authors": "C. He et al.",
+   "year": 2025,
+   "venue": "TPAMI",
+   "url": "https://arxiv.org/abs/2406.11138",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "surveys",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 36,
+   "name": "",
+   "title": "Quality Assessment for Text-to-Image Generation: A Survey",
+   "authors": "Y. Tian et al.",
+   "year": 2025,
+   "venue": "IEEE MultiMedia",
+   "url": "https://scholars.cityu.edu.hk/en/publications/quality-assessment-for-text-to-image-generation-a-survey/",
+   "url_label": "Paper",
+   "url_source": "searched",
+   "code": "",
+   "section": "surveys",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 37,
+   "name": "",
+   "title": "A Survey of Multimodal Controllable Diffusion Models",
+   "authors": "R. Jiang et al.",
+   "year": 2024,
+   "venue": "JCST",
+   "url": "https://doi.org/10.1007/s11390-024-3814-0",
+   "url_label": "DOI",
+   "url_source": "searched",
+   "code": "",
+   "section": "surveys",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "1"
+   ]
+  },
+  {
+   "id": 38,
+   "name": "",
+   "title": "Towards Understanding Cross and Self-Attention in Stable Diffusion for Text-Guided Image Editing",
+   "authors": "B. Liu et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2403.03431",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.1.1",
+    "2.2"
+   ]
+  },
+  {
+   "id": 39,
+   "name": "",
+   "title": "Self-Cross Diffusion Guidance for Text-to-Image Synthesis of Similar Subjects",
+   "authors": "W. Qiu et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2411.18936",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://github.com/mengtang-lab/selfcross-guidance",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "2.2",
+    "4",
+    "5",
+    "5.2",
+    "5.4.1"
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Transformer",
+   "title": "Attention Is All You Need",
+   "authors": "A. Vaswani et al.",
+   "year": 2017,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/1706.03762",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.2"
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Prompt-to-Prompt",
+   "title": "Prompt-to-Prompt Image Editing with Cross-Attention Control",
+   "authors": "A. Hertz et al.",
+   "year": 2023,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=_CDixzkzeyb",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.2"
+   ]
+  },
+  {
+   "id": 42,
+   "name": "",
+   "title": "When Are Lemons Purple? The Concept Association Bias of Vision-Language Models",
+   "authors": "Y. Tang et al.",
+   "year": 2023,
+   "venue": "EMNLP",
+   "url": "https://aclanthology.org/2023.emnlp-main.886/",
+   "url_label": "ACL",
+   "url_source": "paper",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.2"
+   ]
+  },
+  {
+   "id": 43,
+   "name": "ARO",
+   "title": "When and Why Vision-Language Models Behave Like Bags-of-Words, and What to Do About It?",
+   "authors": "M. Yuksekgonul et al.",
+   "year": 2023,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=KRLUvxh8uaX",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "2.2",
+    "9.2"
+   ]
+  },
+  {
+   "id": 44,
+   "name": "eDiff-I",
+   "title": "eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers",
+   "authors": "Y. Balaji et al.",
+   "year": 2022,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2211.01324",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.2"
+   ]
+  },
+  {
+   "id": 45,
+   "name": "",
+   "title": "Towards Understanding the Working Mechanism of Text-to-Image Diffusion Model",
+   "authors": "M. Yi et al.",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "url": "https://openreview.net/forum?id=zTu0QEpvtZ",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.2"
+   ]
+  },
+  {
+   "id": 46,
+   "name": "ControlNet++",
+   "title": "ControlNet++: Improving Conditional Controls with Efficient Consistency Feedback",
+   "authors": "M. Li et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2404.07987",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.2",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.2"
+   ]
+  },
+  {
+   "id": 47,
+   "name": "LAION-5B",
+   "title": "LAION-5B: An Open Large-Scale Dataset for Training Next Generation Image-Text Models",
+   "authors": "C. Schuhmann et al.",
+   "year": 2022,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2210.08402",
+   "url_label": "arXiv",
+   "url_source": "paper",
+   "code": "",
+   "section": "2.3",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.3"
+   ]
+  },
+  {
+   "id": 48,
+   "name": "DALL·E",
+   "title": "Zero-Shot Text-to-Image Generation",
+   "authors": "A. Ramesh et al.",
+   "year": 2021,
+   "venue": "ICML",
+   "url": "https://arxiv.org/abs/2102.12092",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "2.4",
+    "10.4"
+   ]
+  },
+  {
+   "id": 49,
+   "name": "Parti",
+   "title": "Scaling Autoregressive Models for Content-Rich Text-to-Image Generation",
+   "authors": "J. Yu et al.",
+   "year": 2022,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2206.10789",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "2.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "2.4",
+    "10.4"
+   ]
+  },
+  {
+   "id": 50,
+   "name": "DiT",
+   "title": "Scalable Diffusion Models with Transformers",
+   "authors": "W. Peebles et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2212.09748",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.5",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 51,
+   "name": "PixArt-α",
+   "title": "PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis",
+   "authors": "J. Chen et al.",
+   "year": 2024,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=eAKmQPe3m1",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "2.5",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 52,
+   "name": "SDXL",
+   "title": "SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis",
+   "authors": "D. Podell et al.",
+   "year": 2024,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=di52zR8xgf",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "2.5",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 53,
+   "name": "DALL·E 3",
+   "title": "Improving Image Generation with Better Captions",
+   "authors": "J. Betker et al.",
+   "year": 2023,
+   "venue": "OpenAI Tech. Report",
+   "url": "https://cdn.openai.com/papers/dall-e-3.pdf",
+   "url_label": "PDF",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.5",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 54,
+   "name": "Stable Diffusion 3",
+   "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis",
+   "authors": "P. Esser et al.",
+   "year": 2024,
+   "venue": "ICML",
+   "url": "https://arxiv.org/abs/2403.03206",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "2.5",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 55,
+   "name": "FLUX",
+   "title": "Demystifying FLUX Architecture",
+   "authors": "O. Greenberg",
+   "year": 2025,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2507.09595",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "2.5",
+   "levels": [],
+   "types": [],
+   "cited_in": []
+  },
+  {
+   "id": 56,
+   "name": "RPG",
+   "title": "Mastering Text-to-Image Diffusion: Recaptioning, Planning, and Generating with Multimodal LLMs",
+   "authors": "L. Yang et al.",
+   "year": 2024,
+   "venue": "ICML",
+   "url": "https://arxiv.org/abs/2401.11708",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.2",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "2.5",
+    "5.4.2"
+   ]
+  },
+  {
+   "id": 57,
+   "name": "ELLA",
+   "title": "ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment",
+   "authors": "X. Hu et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2403.05135",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "6.4.5",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "2.5",
+    "6.4.5",
+    "6.5"
+   ]
+  },
+  {
+   "id": 58,
+   "name": "LLM4GEN",
+   "title": "LLM4GEN: Leveraging Semantic Representation of LLMs for Text-to-Image Generation",
+   "authors": "M. Liu et al.",
+   "year": 2025,
+   "venue": "AAAI",
+   "url": "https://arxiv.org/abs/2407.00737",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.5",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "2.5",
+    "6.4.5",
+    "6.5"
+   ]
+  },
+  {
+   "id": 59,
+   "name": "",
+   "title": "Not Only Generative Art: Stable Diffusion for Content-Style Disentanglement in Art Analysis",
+   "authors": "Y. Wu et al.",
+   "year": 2023,
+   "venue": "ACM ICMR",
+   "url": "https://arxiv.org/abs/2304.10278",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "4",
+    "6",
+    "6.3"
+   ]
+  },
+  {
+   "id": 60,
+   "name": "",
+   "title": "Progressive Compositionality in Text-to-Image Generative Models",
+   "authors": "X. Han et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=S85PP4xjFD",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "11",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "4"
+   ]
+  },
+  {
+   "id": 61,
+   "name": "Attention Regulation",
+   "title": "Enhancing Semantic Fidelity in Text-to-Image Synthesis: Attention Regulation in Diffusion Models",
+   "authors": "Y. Zhang et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "url": "https://doi.org/10.1007/978-3-031-73016-0_5",
+   "url_label": "DOI",
+   "url_source": "paper",
+   "code": "",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.2",
+    "5.4.1"
+   ]
+  },
+  {
+   "id": 62,
+   "name": "LI-DiT",
+   "title": "Exploring the Role of Large Language Models in Prompt Encoding for Diffusion Models",
+   "authors": "B. Ma et al.",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2406.11831",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.2",
+    "5.4.3"
+   ]
+  },
+  {
+   "id": 63,
+   "name": "LoRA",
+   "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+   "authors": "E. J. Hu et al.",
+   "year": 2022,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=nZeVKeeFYf9",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "5.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "5.3"
+   ]
+  },
+  {
+   "id": 64,
+   "name": "ImageReward",
+   "title": "ImageReward: Learning and Evaluating Human Preferences for Text-to-Image Generation",
+   "authors": "J. Xu et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2304.05977",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Metric",
+    "Training-time"
+   ],
+   "cited_in": [
+    "5.3",
+    "5.5",
+    "9.2"
+   ]
+  },
+  {
+   "id": 65,
+   "name": "Parrot",
+   "title": "Parrot: Pareto-Optimal Multi-Reward Reinforcement Learning Framework for Text-to-Image Generation",
+   "authors": "S. H. Lee et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2401.05675",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "5.3"
+   ]
+  },
+  {
+   "id": 66,
+   "name": "Predicated Diffusion",
+   "title": "Predicated Diffusion: Predicate Logic-Based Attention Guidance for Text-to-Image Diffusion Models",
+   "authors": "K. Sueyoshi et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2311.16117",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.1"
+   ]
+  },
+  {
+   "id": 67,
+   "name": "InitNO",
+   "title": "InitNO: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization",
+   "authors": "X. Guo et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2404.04650",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://xiefan-guo.github.io/initno",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.1"
+   ]
+  },
+  {
+   "id": 68,
+   "name": "CoCoNO",
+   "title": "CoCoNO: Attention Contrast-and-Complete for Initial Noise Optimization in Text-to-Image Synthesis",
+   "authors": "A. K. Sundaram et al.",
+   "year": 2025,
+   "venue": "ACM MM",
+   "url": "https://doi.org/10.1145/3746027.3755169",
+   "url_label": "DOI",
+   "url_source": "paper",
+   "code": "",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.1"
+   ]
+  },
+  {
+   "id": 69,
+   "name": "BoxDiff",
+   "title": "BoxDiff: Text-to-Image Synthesis with Training-Free Box-Constrained Diffusion",
+   "authors": "J. Xie et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2307.10816",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.2",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.2",
+    "5.5",
+    "11.1"
+   ]
+  },
+  {
+   "id": 70,
+   "name": "",
+   "title": "Obtaining Favorable Layouts for Multiple Object Generation",
+   "authors": "B. Battash et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2405.00791",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "5.4.2",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.2",
+    "11.1"
+   ]
+  },
+  {
+   "id": 71,
+   "name": "Attention Refocusing",
+   "title": "Grounded Text-to-Image Synthesis with Attention Refocusing",
+   "authors": "Q. Phung et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2306.05427",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.2",
+   "levels": [
+    "numerical",
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.2",
+    "5.5",
+    "7.4.2"
+   ]
+  },
+  {
+   "id": 72,
+   "name": "B2B",
+   "title": "Box It to Bind It: Unified Layout Control and Attribute Binding in T2I Diffusion Models",
+   "authors": "A. Taghipour et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2402.17910",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "5.4.2",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.2",
+    "5.5"
+   ]
+  },
+  {
+   "id": 73,
+   "name": "Multimodal-CoT",
+   "title": "Multimodal Chain-of-Thought Reasoning in Language Models",
+   "authors": "Z. Zhang et al.",
+   "year": 2024,
+   "venue": "TMLR",
+   "url": "https://openreview.net/forum?id=gDlsMWost9",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "5.4.2",
+   "levels": [
+    "attribute",
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.2",
+    "6.5"
+   ]
+  },
+  {
+   "id": 74,
+   "name": "Composable Diffusion",
+   "title": "Compositional Visual Generation with Composable Diffusion Models",
+   "authors": "N. Liu et al.",
+   "year": 2022,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2206.01714",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.3",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.4.3"
+   ]
+  },
+  {
+   "id": 75,
+   "name": "ReNO",
+   "title": "ReNO: Enhancing One-Step Text-to-Image Models Through Reward-Based Noise Optimization",
+   "authors": "L. Eyring et al.",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2406.04312",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "5.5"
+   ]
+  },
+  {
+   "id": 76,
+   "name": "FCA",
+   "title": "Leveraging the Syntactic Structure of the Text Prompt to Enhance Object-Attribute Binding in Image Generation",
+   "authors": "M. M. Trusca et al.",
+   "year": 2024,
+   "venue": "ACM MM Workshop",
+   "url": "https://doi.org/10.1145/3688866.3689118",
+   "url_label": "DOI",
+   "url_source": "paper",
+   "code": "",
+   "section": "6.4.2",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Dataset",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.2",
+    "10.2"
+   ]
+  },
+  {
+   "id": 77,
+   "name": "SCG-Diffusion",
+   "title": "Towards Transformer-Based Aligned Generation with Self-Coherence Guidance",
+   "authors": "S. Wang et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2503.17675",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.5",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6",
+    "6.4.5"
+   ]
+  },
+  {
+   "id": 78,
+   "name": "CSGO",
+   "title": "CSGO: Content-Style Composition in Text-to-Image Generation",
+   "authors": "P. Xing et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2408.16766",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "6.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "6",
+    "6.3",
+    "6.5"
+   ]
+  },
+  {
+   "id": 79,
+   "name": "StyleDiffusion",
+   "title": "StyleDiffusion: Controllable Disentangled Style Transfer via Diffusion Models",
+   "authors": "Z. Wang et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2308.07863",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "6",
+    "6.3",
+    "6.5"
+   ]
+  },
+  {
+   "id": 80,
+   "name": "GLIGEN",
+   "title": "GLIGEN: Open-Set Grounded Text-to-Image Generation",
+   "authors": "Y. Li et al.",
+   "year": 2023,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2301.07093",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "attribute",
+    "relational"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.2",
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 81,
+   "name": "WiCLP",
+   "title": "Improving Compositional Attribute Binding in Text-to-Image Generative Models via Enhanced Text Embeddings",
+   "authors": "A. Zarei et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2406.07844",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "6.4.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.2",
+    "6.4.3"
+   ]
+  },
+  {
+   "id": 82,
+   "name": "MI-TUNE",
+   "title": "Information Theoretic Text-to-Image Alignment",
+   "authors": "C. Wang et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=Ugs2W5XFFo",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "6.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "6.3"
+   ]
+  },
+  {
+   "id": 83,
+   "name": "MINDE",
+   "title": "MINDE: Mutual Information Neural Diffusion Estimation",
+   "authors": "G. Franzese et al.",
+   "year": 2024,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=0kWd8SJq8d",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "6.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "6.3"
+   ]
+  },
+  {
+   "id": 84,
+   "name": "EBAMA",
+   "title": "Object-Conditioned Energy-Based Attention Map Alignment in Text-to-Image Diffusion Models",
+   "authors": "Y. Zhang et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "url": "https://doi.org/10.1007/978-3-031-72946-1_4",
+   "url_label": "DOI",
+   "url_source": "paper",
+   "code": "",
+   "section": "6.4.1",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.1"
+   ]
+  },
+  {
+   "id": 85,
+   "name": "EBCA",
+   "title": "Energy-Based Cross Attention for Bayesian Context Update in Text-to-Image Diffusion Models",
+   "authors": "G. Y. Park et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2306.09869",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.1",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.1",
+    "6.5"
+   ]
+  },
+  {
+   "id": 86,
+   "name": "CONFORM",
+   "title": "CONFORM: Contrast Is All You Need for High-Fidelity Text-to-Image Diffusion Models",
+   "authors": "T. H. S. Meral et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2312.06059",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://github.com/gemlab-vt/conform",
+   "section": "6.4.1",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.1",
+    "6.5"
+   ]
+  },
+  {
+   "id": 87,
+   "name": "T-SAM",
+   "title": "Text Embedding Is Not All You Need: Attention Control for Text-to-Image Semantic Alignment with Text Self-Attention Maps",
+   "authors": "J. Kim et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2411.15236",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.1",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.1",
+    "11.1"
+   ]
+  },
+  {
+   "id": 88,
+   "name": "MaskDiffusion",
+   "title": "MaskDiffusion: Boosting Text-to-Image Consistency with Conditional Mask",
+   "authors": "Y. Zhou et al.",
+   "year": 2025,
+   "venue": "IJCV",
+   "url": "https://arxiv.org/abs/2309.04399",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.1",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.1"
+   ]
+  },
+  {
+   "id": 89,
+   "name": "BAM",
+   "title": "An Enhanced Semantic Binding Method Based on Balanced Attention Maps",
+   "authors": "H. Li et al.",
+   "year": 2025,
+   "venue": "DLCV",
+   "url": "https://scholar.google.com/scholar?q=An+enhanced+semantic+binding+method+based+on+balanced+attention+maps",
+   "url_label": "Scholar",
+   "url_source": "scholar",
+   "code": "",
+   "section": "6.4.2",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.2"
+   ]
+  },
+  {
+   "id": 90,
+   "name": "",
+   "title": "Attention Disentanglement for Semantic Diffusion Modeling in Text-to-Image Generation",
+   "authors": "H.-C. Yu et al.",
+   "year": 2025,
+   "venue": "ICASSP",
+   "url": "https://ieeexplore.ieee.org/document/10888688",
+   "url_label": "IEEE",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.2",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.2"
+   ]
+  },
+  {
+   "id": 91,
+   "name": "R-Bind",
+   "title": "R-Bind: Unified Enhancement of Attribute and Relation Binding in Text-to-Image Diffusion Models",
+   "authors": "H. Zhang et al.",
+   "year": 2025,
+   "venue": "EMNLP",
+   "url": "https://aclanthology.org/2025.emnlp-main.349/",
+   "url_label": "ACL",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.2",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.2"
+   ]
+  },
+  {
+   "id": 92,
+   "name": "InstanceDiffusion",
+   "title": "InstanceDiffusion: Instance-Level Control for Image Generation",
+   "authors": "X. Wang et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2402.03290",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://people.eecs.berkeley.edu/~xdwang/projects/InstDiff/",
+   "section": "6.4.4",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.4"
+   ]
+  },
+  {
+   "id": 93,
+   "name": "MIGC",
+   "title": "MIGC: Multi-Instance Generation Controller for Text-to-Image Synthesis",
+   "authors": "D. Zhou et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2402.05408",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://migcproject.github.io",
+   "section": "6.4.4",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.4"
+   ]
+  },
+  {
+   "id": 94,
+   "name": "VSC",
+   "title": "VSC: Visual Search Compositional Text-to-Image Diffusion Model",
+   "authors": "D. H. Dat et al.",
+   "year": 2025,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2505.01104",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.4",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.4"
+   ]
+  },
+  {
+   "id": 95,
+   "name": "R2F",
+   "title": "Rare-to-Frequent: Unlocking Compositional Generation Power of Diffusion Models on Rare Concepts with LLM Guidance",
+   "authors": "D. Park et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "url": "https://arxiv.org/abs/2410.22376",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.5",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.5"
+   ]
+  },
+  {
+   "id": 96,
+   "name": "PCIG",
+   "title": "Prompt-Consistency Image Generation (PCIG): A Unified Framework Integrating LLMs, Knowledge Graphs, and Controllable Diffusion Models",
+   "authors": "Y. Sun et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2406.16333",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "6.4.5",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.5"
+   ]
+  },
+  {
+   "id": 97,
+   "name": "",
+   "title": "A Debiasing Framework for Attribute Binding in Diffusion-Based Text-to-Image Generation",
+   "authors": "Y. Luo et al.",
+   "year": 2025,
+   "venue": "ICIP",
+   "url": "https://ieeexplore.ieee.org/document/11084377",
+   "url_label": "IEEE",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.5",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "6.4.5"
+   ]
+  },
+  {
+   "id": 98,
+   "name": "DreamSync",
+   "title": "DreamSync: Aligning Text-to-Image Generation with Image Understanding Feedback",
+   "authors": "J. Sun et al.",
+   "year": 2025,
+   "venue": "NAACL",
+   "url": "https://aclanthology.org/2025.naacl-long.304/",
+   "url_label": "ACL",
+   "url_source": "paper",
+   "code": "",
+   "section": "7.3",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "7",
+    "7.3",
+    "7.5"
+   ]
+  },
+  {
+   "id": 99,
+   "name": "CountGen",
+   "title": "Make It Count: Text-to-Image Generation with an Accurate Number of Objects",
+   "authors": "L. Binyamin et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2406.10210",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.4.1",
+   "levels": [
+    "attribute",
+    "numerical"
+   ],
+   "types": [
+    "Analysis",
+    "Dataset",
+    "Inference-time",
+    "Metric",
+    "Training-time"
+   ],
+   "cited_in": [
+    "6.5",
+    "7",
+    "7.2",
+    "7.3",
+    "7.4.1",
+    "7.5",
+    "9.2",
+    "10.3"
+   ]
+  },
+  {
+   "id": 100,
+   "name": "Reliable Random Seeds",
+   "title": "Enhancing Compositional Text-to-Image Generation with Reliable Random Seeds",
+   "authors": "S. Li et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=5BSlakturs",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "7.3",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Dataset",
+    "Training-time"
+   ],
+   "cited_in": [
+    "7",
+    "7.3",
+    "10.3"
+   ]
+  },
+  {
+   "id": 101,
+   "name": "Objectness",
+   "title": "Measuring the Objectness of Image Windows",
+   "authors": "B. Alexe et al.",
+   "year": 2012,
+   "venue": "TPAMI",
+   "url": "https://doi.org/10.1109/TPAMI.2012.28",
+   "url_label": "DOI",
+   "url_source": "paper",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 102,
+   "name": "DeepBox",
+   "title": "DeepBox: Learning Objectness with Convolutional Networks",
+   "authors": "W. Kuo et al.",
+   "year": 2015,
+   "venue": "ICCV",
+   "url": "https://doi.ieeecomputersociety.org/10.1109/ICCV.2015.285",
+   "url_label": "IEEE",
+   "url_source": "paper",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 103,
+   "name": "",
+   "title": "Text-to-Image Diffusion Models Cannot Count, and Prompt Refinement Cannot Help",
+   "authors": "Y. Cao et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2503.06884",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 104,
+   "name": "SCPNet",
+   "title": "Scale-Context Perceptive Network for Crowd Counting and Localization in Smart City System",
+   "authors": "W. Zhai et al.",
+   "year": 2023,
+   "venue": "IEEE IoT-J",
+   "url": "https://ieeexplore.ieee.org/document/10105438",
+   "url_label": "IEEE",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 105,
+   "name": "RAQNet",
+   "title": "Region-Aware Quantum Network for Crowd Counting",
+   "authors": "W. Zhai et al.",
+   "year": 2024,
+   "venue": "IEEE TCE",
+   "url": "https://ieeexplore.ieee.org/document/10478718/",
+   "url_label": "IEEE",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 106,
+   "name": "VLPG",
+   "title": "Zero-Shot Object Counting with Vision-Language Prior Guidance Network",
+   "authors": "W. Zhai et al.",
+   "year": 2024,
+   "venue": "TCSVT",
+   "url": "https://ieeexplore.ieee.org/document/10740342/",
+   "url_label": "IEEE",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 107,
+   "name": "DCFNet",
+   "title": "Towards Generalizable Object Counting via Dual-Prompted Cross-Modality Fusion Network",
+   "authors": "W. Zhai et al.",
+   "year": 2025,
+   "venue": "Information Fusion",
+   "url": "https://www.sciencedirect.com/science/article/abs/pii/S1566253525008991",
+   "url_label": "Elsevier",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 108,
+   "name": "PEGNet",
+   "title": "Privacy-Preserving Object Counting in Lightweight Intelligent Transportation System",
+   "authors": "W. Zhai et al.",
+   "year": 2025,
+   "venue": "IEEE T-ITS",
+   "url": "https://scholar.google.com/scholar?q=Privacy-preserving+object+counting+in+lightweight+intelligent+transportation+system",
+   "url_label": "Scholar",
+   "url_source": "scholar",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 109,
+   "name": "LMGCS",
+   "title": "Multi-View Gait Recognition with Joint Local Multi-Scale and Global Contextual Spatio-Temporal Features",
+   "authors": "W. Zhai et al.",
+   "year": 2024,
+   "venue": "TCSVT",
+   "url": "https://ieeexplore.ieee.org/document/10707343/",
+   "url_label": "IEEE",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Analysis"
+   ],
+   "cited_in": [
+    "7.2"
+   ]
+  },
+  {
+   "id": 110,
+   "name": "",
+   "title": "Improving CLIP Counting Accuracy via Parameter-Efficient Fine-Tuning",
+   "authors": "R. Zhang et al.",
+   "year": 2025,
+   "venue": "TMLR",
+   "url": "https://par.nsf.gov/biblio/10595988",
+   "url_label": "Paper",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.3",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "7.3"
+   ]
+  },
+  {
+   "id": 111,
+   "name": "",
+   "title": "Improving Compositional Text-to-Image Generation with Large Vision-Language Models",
+   "authors": "S. Wen et al.",
+   "year": 2023,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2310.06311",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "7.3",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "7.3"
+   ]
+  },
+  {
+   "id": 112,
+   "name": "",
+   "title": "Aligning Text-to-Image Models Using Human Feedback",
+   "authors": "K. Lee et al.",
+   "year": 2023,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2302.12192",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "7.3",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "7.3",
+    "7.5"
+   ]
+  },
+  {
+   "id": 113,
+   "name": "DPOK",
+   "title": "Reinforcement Learning for Fine-Tuning Text-to-Image Diffusion Models",
+   "authors": "Y. Fan et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "url": "https://openreview.net/forum?id=8OTPepXzeh",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "7.3",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "7.3"
+   ]
+  },
+  {
+   "id": 114,
+   "name": "GPO",
+   "title": "Towards Self-Improvement of Diffusion Models via Group Preference Optimization",
+   "authors": "R. Chen et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2505.11070",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "7.3",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "7.3"
+   ]
+  },
+  {
+   "id": 115,
+   "name": "CountLoop",
+   "title": "CountLoop: Iterative Agent Guided High Instance Image Generation",
+   "authors": "A. Mondal et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2508.16644",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.4.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time",
+    "Training-time"
+   ],
+   "cited_in": [
+    "7.3",
+    "7.4.2",
+    "7.5"
+   ]
+  },
+  {
+   "id": 116,
+   "name": "CountDiffusion",
+   "title": "CountDiffusion: Text-to-Image Synthesis with Training-Free Counting-Guidance Diffusion",
+   "authors": "Y. Li et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2505.04347",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "7.4.1",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.1"
+   ]
+  },
+  {
+   "id": 117,
+   "name": "YOLO-Count",
+   "title": "YOLO-Count: Differentiable Object Counting for Text-to-Image Generation",
+   "authors": "G. Zeng et al.",
+   "year": 2025,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2508.00728",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.4.1",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.1"
+   ]
+  },
+  {
+   "id": 118,
+   "name": "Counting-Token",
+   "title": "Iterative Object Count Optimization for Text-to-Image Diffusion Models",
+   "authors": "O. Zafar et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2408.11721",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "7.4.1",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.1",
+    "7.5"
+   ]
+  },
+  {
+   "id": 119,
+   "name": "",
+   "title": "Improving Faithfulness of Text-to-Image Diffusion Models Through Inference Intervention",
+   "authors": "D. Guo et al.",
+   "year": 2025,
+   "venue": "WACV",
+   "url": "https://www.amazon.science/publications/improving-faithfulness-of-text-to-image-diffusion-models-through-inference-intervention",
+   "url_label": "Paper",
+   "url_source": "searched",
+   "code": "",
+   "section": "7.4.1",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.1"
+   ]
+  },
+  {
+   "id": 120,
+   "name": "Be Decisive",
+   "title": "Be Decisive: Noise-Induced Layouts for Multi-Subject Generation",
+   "authors": "O. Dahary et al.",
+   "year": 2025,
+   "venue": "SIGGRAPH",
+   "url": "https://arxiv.org/abs/2505.21488",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://omer11a.github.io/be-decisive",
+   "section": "7.4.1",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.1"
+   ]
+  },
+  {
+   "id": 121,
+   "name": "CountCluster",
+   "title": "CountCluster: Training-Free Object Quantity Guidance with Cross-Attention Map Clustering for Text-to-Image Generation",
+   "authors": "J. Lee et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2508.10710",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "7.4.1",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.1"
+   ]
+  },
+  {
+   "id": 122,
+   "name": "InstanceGen",
+   "title": "InstanceGen: Image Generation with Instance-Level Instructions",
+   "authors": "E. Sella et al.",
+   "year": 2025,
+   "venue": "SIGGRAPH",
+   "url": "https://arxiv.org/abs/2505.05678",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://tau-vailab.github.io/InstanceGen",
+   "section": "7.4.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.2",
+    "7.5"
+   ]
+  },
+  {
+   "id": 123,
+   "name": "HCMA",
+   "title": "HCMA: Hierarchical Cross-Model Alignment for Grounded Text-to-Image Generation",
+   "authors": "H. Wang et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2505.06512",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "7.4.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.2"
+   ]
+  },
+  {
+   "id": 124,
+   "name": "LLM Blueprint",
+   "title": "LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts",
+   "authors": "H. Gani et al.",
+   "year": 2024,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=mNYF0IHbRy",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "7.4.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.2",
+    "7.5"
+   ]
+  },
+  {
+   "id": 125,
+   "name": "Bounded Attention",
+   "title": "Be Yourself: Bounded Attention for Multi-Subject Text-to-Image Generation",
+   "authors": "O. Dahary et al.",
+   "year": 2025,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2403.16990",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://omer11a.github.io/bounded-attention",
+   "section": "7.4.2",
+   "levels": [
+    "numerical"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.4.2",
+    "7.5"
+   ]
+  },
+  {
+   "id": 126,
+   "name": "STORM",
+   "title": "Spatial Transport Optimization by Repositioning Attention Map for Training-Free Text-to-Image Synthesis",
+   "authors": "W. Han et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2503.22168",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.1",
+   "levels": [
+    "numerical",
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "7.5",
+    "8.4.1",
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 127,
+   "name": "CoMPaSS",
+   "title": "CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models",
+   "authors": "G. Zhang et al.",
+   "year": 2025,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2412.13195",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Analysis",
+    "Training-time"
+   ],
+   "cited_in": [
+    "8.2",
+    "8.3"
+   ]
+  },
+  {
+   "id": 128,
+   "name": "PLACE",
+   "title": "PLACE: Adaptive Layout-Semantic Fusion for Semantic Image Synthesis",
+   "authors": "Z. Lv et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2403.01852",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Analysis",
+    "Training-time"
+   ],
+   "cited_in": [
+    "8.2",
+    "8.3",
+    "8.5"
+   ]
+  },
+  {
+   "id": 129,
+   "name": "TokenCompose",
+   "title": "TokenCompose: Text-to-Image Diffusion with Token-Level Supervision",
+   "authors": "Z. Wang et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2312.03626",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Analysis",
+    "Dataset",
+    "Training-time"
+   ],
+   "cited_in": [
+    "8.2",
+    "8.3",
+    "10.2",
+    "11.2"
+   ]
+  },
+  {
+   "id": 130,
+   "name": "ReCo",
+   "title": "ReCo: Region-Controlled Text-to-Image Generation",
+   "authors": "Z. Yang et al.",
+   "year": 2023,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2211.15518",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://github.com/microsoft/ReCo",
+   "section": "8.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Analysis",
+    "Inference-time",
+    "Training-time"
+   ],
+   "cited_in": [
+    "8.2",
+    "8.3",
+    "8.4.2",
+    "8.5"
+   ]
+  },
+  {
+   "id": 131,
+   "name": "VersaGen",
+   "title": "VersaGen: Unleashing Versatile Visual Control for Text-to-Image Synthesis",
+   "authors": "Z. Chen et al.",
+   "year": 2025,
+   "venue": "AAAI",
+   "url": "https://doi.org/10.1609/aaai.v39i3.32240",
+   "url_label": "DOI",
+   "url_source": "paper",
+   "code": "",
+   "section": "8.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "8.3"
+   ]
+  },
+  {
+   "id": 132,
+   "name": "",
+   "title": "Hybrid Layout Control for Diffusion Transformer: Fewer Annotations, Superior Aesthetics",
+   "authors": "K. Wu et al.",
+   "year": 2025,
+   "venue": "ICCV",
+   "url": "https://hybrid-layout-msra.github.io",
+   "url_label": "Paper",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Training-time"
+   ],
+   "cited_in": [
+    "8.3"
+   ]
+  },
+  {
+   "id": 133,
+   "name": "",
+   "title": "Guided Image Synthesis via Initial Image Editing in Diffusion Model",
+   "authors": "J. Mao et al.",
+   "year": 2023,
+   "venue": "ACM MM",
+   "url": "https://arxiv.org/abs/2305.03382",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.1",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.1"
+   ]
+  },
+  {
+   "id": 134,
+   "name": "NoiseCollage",
+   "title": "NoiseCollage: A Layout-Aware Text-to-Image Diffusion Model Based on Noise Cropping and Merging",
+   "authors": "T. Shirakawa et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2403.03485",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.1",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.1",
+    "8.5",
+    "11.2"
+   ]
+  },
+  {
+   "id": 135,
+   "name": "",
+   "title": "Spatial-Aware Latent Initialization for Controllable Image Generation",
+   "authors": "W. Sun et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2401.16157",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "8.4.1",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.1",
+    "8.5"
+   ]
+  },
+  {
+   "id": 136,
+   "name": "SpaText",
+   "title": "SpaText: Spatio-Textual Representation for Controllable Image Generation",
+   "authors": "O. Avrahami et al.",
+   "year": 2023,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2211.14305",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 137,
+   "name": "ZestGuide",
+   "title": "Zero-Shot Spatial Layout Conditioning for Text-to-Image Diffusion Models",
+   "authors": "G. Couairon et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://doi.ieeecomputersociety.org/10.1109/ICCV51070.2023.00207",
+   "url_label": "IEEE",
+   "url_source": "paper",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 138,
+   "name": "Make-A-Scene",
+   "title": "Make-A-Scene: Scene-Based Text-to-Image Generation with Human Priors",
+   "authors": "O. Gafni et al.",
+   "year": 2022,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2203.13131",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 139,
+   "name": "FreeControl",
+   "title": "FreeControl: Training-Free Spatial Control of Any Text-to-Image Diffusion Model with Any Condition",
+   "authors": "S. Mo et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2312.07536",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 140,
+   "name": "SimM",
+   "title": "Check, Locate, Rectify: A Training-Free Layout Calibration System for Text-to-Image Generation",
+   "authors": "B. Gong et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://doi.ieeecomputersociety.org/10.1109/CVPR52733.2024.00633",
+   "url_label": "IEEE",
+   "url_source": "paper",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Dataset",
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2",
+    "8.5",
+    "10.3"
+   ]
+  },
+  {
+   "id": 141,
+   "name": "LoCo",
+   "title": "LoCo: Locally Constrained Training-Free Layout-to-Image Synthesis",
+   "authors": "P. Zhao et al.",
+   "year": 2023,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2311.12342",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2",
+    "8.5"
+   ]
+  },
+  {
+   "id": 142,
+   "name": "Layout Guidance",
+   "title": "Training-Free Layout Control with Cross-Attention Guidance",
+   "authors": "M. Chen et al.",
+   "year": 2024,
+   "venue": "WACV",
+   "url": "https://arxiv.org/abs/2304.03373",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://github.com/silent-chen/layout-guidance",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 143,
+   "name": "STAD",
+   "title": "Harnessing the Spatial-Temporal Attention of Diffusion Models for High-Fidelity Text-to-Image Synthesis",
+   "authors": "Q. Wu et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://doi.ieeecomputersociety.org/10.1109/ICCV51070.2023.00714",
+   "url_label": "IEEE",
+   "url_source": "paper",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 144,
+   "name": "REVISION",
+   "title": "REVISION: Rendering Tools Enable Spatial Fidelity in Vision-Language Models",
+   "authors": "A. Chatterjee et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2408.02231",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 145,
+   "name": "VODiff",
+   "title": "VODiff: Controlling Object Visibility Order in Text-to-Image Generation",
+   "authors": "D. Liang et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liang_VODiff_Controlling_Object_Visibility_Order_in_Text-to-Image_Generation_CVPR_2025_paper.html",
+   "url_label": "CVF",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 146,
+   "name": "DADG",
+   "title": "Training-Free Dense-Aligned Diffusion Guidance for Modular Conditional Image Synthesis",
+   "authors": "Z. Wang et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2504.01515",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 147,
+   "name": "RAGD",
+   "title": "RAGD: Regional-Aware Diffusion Model for Text-to-Image Generation",
+   "authors": "Z. Chen et al.",
+   "year": 2025,
+   "venue": "ICCV",
+   "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Chen_RAGD_Regional-Aware_Diffusion_Model_for_Text-to-Image_Generation_ICCV_2025_paper.html",
+   "url_label": "CVF",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.2",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.2"
+   ]
+  },
+  {
+   "id": 148,
+   "name": "Control-GPT",
+   "title": "Controllable Text-to-Image Generation with GPT-4",
+   "authors": "T. Zhang et al.",
+   "year": 2023,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2305.18583",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "8.4.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.3"
+   ]
+  },
+  {
+   "id": 149,
+   "name": "LMD",
+   "title": "LLM-Grounded Diffusion: Enhancing Prompt Understanding of Text-to-Image Diffusion Models with Large Language Models",
+   "authors": "L. Lian et al.",
+   "year": 2024,
+   "venue": "TMLR",
+   "url": "https://openreview.net/forum?id=hFALpTb4fR",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "8.4.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.3"
+   ]
+  },
+  {
+   "id": 150,
+   "name": "BlobGEN",
+   "title": "Compositional Text-to-Image Generation with Dense Blob Representations",
+   "authors": "W. Nie et al.",
+   "year": 2024,
+   "venue": "ICML",
+   "url": "https://arxiv.org/abs/2405.08246",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time",
+    "Metric"
+   ],
+   "cited_in": [
+    "8.4.3",
+    "9.2"
+   ]
+  },
+  {
+   "id": 151,
+   "name": "",
+   "title": "Sparks of Artificial General Intelligence: Early Experiments with GPT-4",
+   "authors": "S. Bubeck et al.",
+   "year": 2023,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2303.12712",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "8.4.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.3"
+   ]
+  },
+  {
+   "id": 152,
+   "name": "MCCD",
+   "title": "MCCD: Multi-Agent Collaboration-Based Compositional Diffusion for Complex Text-to-Image Generation",
+   "authors": "M. Li et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2505.02648",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.3",
+    "8.5"
+   ]
+  },
+  {
+   "id": 153,
+   "name": "SLD",
+   "title": "Self-Correcting LLM-Controlled Diffusion Models",
+   "authors": "T.-H. Wu et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2311.16090",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.3",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": [
+    "8.4.3",
+    "8.5"
+   ]
+  },
+  {
+   "id": 154,
+   "name": "Inception-v3",
+   "title": "Rethinking the Inception Architecture for Computer Vision",
+   "authors": "C. Szegedy et al.",
+   "year": 2016,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/1512.00567",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 155,
+   "name": "",
+   "title": "Loss Functions and Metrics in Deep Learning. A Review",
+   "authors": "J. Terven et al.",
+   "year": 2023,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2307.02694",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 156,
+   "name": "",
+   "title": "A Note on the Inception Score",
+   "authors": "S. Barratt et al.",
+   "year": 2018,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/1801.01973",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 157,
+   "name": "",
+   "title": "Pros and Cons of GAN Evaluation Measures",
+   "authors": "A. Borji",
+   "year": 2019,
+   "venue": "CVIU",
+   "url": "https://arxiv.org/abs/1802.03446",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 158,
+   "name": "clean-fid",
+   "title": "On Aliased Resizing and Surprising Subtleties in GAN Evaluation",
+   "authors": "G. Parmar et al.",
+   "year": 2022,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2104.11222",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 159,
+   "name": "CMMD",
+   "title": "Rethinking FID: Towards a Better Evaluation Metric for Image Generation",
+   "authors": "S. Jayasumana et al.",
+   "year": 2024,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2401.09603",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 160,
+   "name": "SceneFID",
+   "title": "Object-Centric Image Generation from Layouts",
+   "authors": "T. Sylvain et al.",
+   "year": 2021,
+   "venue": "AAAI",
+   "url": "https://arxiv.org/abs/2003.07449",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 161,
+   "name": "CLIP-IQA",
+   "title": "Exploring CLIP for Assessing the Look and Feel of Images",
+   "authors": "J. Wang et al.",
+   "year": 2023,
+   "venue": "AAAI",
+   "url": "https://doi.org/10.1609/aaai.v37i2.25353",
+   "url_label": "DOI",
+   "url_source": "paper",
+   "code": "",
+   "section": "9.1",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.1"
+   ]
+  },
+  {
+   "id": 162,
+   "name": "",
+   "title": "An Examination of the Robustness of Reference-Free Image Captioning Evaluation Metrics",
+   "authors": "S. Ahmadi et al.",
+   "year": 2024,
+   "venue": "ACL Findings",
+   "url": "https://arxiv.org/abs/2305.14998",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 163,
+   "name": "BLIP",
+   "title": "BLIP: Bootstrapping Language-Image Pre-Training for Unified Vision-Language Understanding and Generation",
+   "authors": "J. Li et al.",
+   "year": 2022,
+   "venue": "ICML",
+   "url": "https://arxiv.org/abs/2201.12086",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 164,
+   "name": "Winoground",
+   "title": "Winoground: Probing Vision and Language Models for Visio-Linguistic Compositionality",
+   "authors": "T. Thrush et al.",
+   "year": 2022,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2204.03162",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.4",
+   "levels": [],
+   "types": [
+    "Dataset",
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2",
+    "10.4"
+   ]
+  },
+  {
+   "id": 165,
+   "name": "VQAScore",
+   "title": "Evaluating Text-to-Visual Generation with Image-to-Text Generation",
+   "authors": "Z. Lin et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2404.01291",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 166,
+   "name": "",
+   "title": "What Makes a Good Metric? Evaluating Automatic Metrics for Text-to-Image Consistency",
+   "authors": "C. Ross et al.",
+   "year": 2024,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2412.13989",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 167,
+   "name": "TIFA",
+   "title": "TIFA: Accurate and Interpretable Text-to-Image Faithfulness Evaluation with Question Answering",
+   "authors": "Y. Hu et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2303.11897",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Dataset",
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2",
+    "10.4"
+   ]
+  },
+  {
+   "id": 168,
+   "name": "YOLOv9",
+   "title": "YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information",
+   "authors": "C.-Y. Wang et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/2402.13616",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 169,
+   "name": "UniDet",
+   "title": "Simple Multi-Dataset Detection",
+   "authors": "X. Zhou et al.",
+   "year": 2022,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2102.13086",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 170,
+   "name": "Pick-a-Pic",
+   "title": "Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation",
+   "authors": "Y. Kirstain et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "url": "https://arxiv.org/abs/2305.01569",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 171,
+   "name": "HPS v2",
+   "title": "Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis",
+   "authors": "X. Wu et al.",
+   "year": 2023,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2306.09341",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "9.2",
+   "levels": [],
+   "types": [
+    "Metric"
+   ],
+   "cited_in": [
+    "9.2"
+   ]
+  },
+  {
+   "id": 172,
+   "name": "COCO Captions",
+   "title": "Microsoft COCO Captions: Data Collection and Evaluation Server",
+   "authors": "X. Chen et al.",
+   "year": 2015,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/1504.00325",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "10.1",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.1"
+   ]
+  },
+  {
+   "id": 173,
+   "name": "MS-COCO",
+   "title": "Microsoft COCO: Common Objects in Context",
+   "authors": "T.-Y. Lin et al.",
+   "year": 2014,
+   "venue": "ECCV",
+   "url": "https://arxiv.org/abs/1405.0312",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.1",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.1",
+    "10.4"
+   ]
+  },
+  {
+   "id": 174,
+   "name": "Flickr8k",
+   "title": "Framing Image Description as a Ranking Task: Data, Models and Evaluation Metrics",
+   "authors": "M. Hodosh et al.",
+   "year": 2013,
+   "venue": "JAIR",
+   "url": "https://doi.org/10.1613/jair.3994",
+   "url_label": "DOI",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.1",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.1"
+   ]
+  },
+  {
+   "id": 175,
+   "name": "Flickr30k",
+   "title": "From Image Descriptions to Visual Denotations: New Similarity Metrics for Semantic Inference over Event Descriptions",
+   "authors": "P. Young et al.",
+   "year": 2014,
+   "venue": "TACL",
+   "url": "https://aclanthology.org/Q14-1006/",
+   "url_label": "ACL",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.1",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.1"
+   ]
+  },
+  {
+   "id": 176,
+   "name": "DALL-Eval",
+   "title": "DALL-Eval: Probing the Reasoning Skills and Social Biases of Text-to-Image Generation Models",
+   "authors": "J. Cho et al.",
+   "year": 2023,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/2202.04053",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.3",
+    "10.4"
+   ]
+  },
+  {
+   "id": 177,
+   "name": "StructureDiffusion",
+   "title": "Training-Free Structured Diffusion Guidance for Compositional Text-to-Image Synthesis",
+   "authors": "W. Feng et al.",
+   "year": 2022,
+   "venue": "arXiv",
+   "url": "https://arxiv.org/abs/2212.05032",
+   "url_label": "arXiv",
+   "url_source": "arxiv",
+   "code": "",
+   "section": "10.2",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.2"
+   ]
+  },
+  {
+   "id": 178,
+   "name": "DSG",
+   "title": "Davidsonian Scene Graph: Improving Reliability in Fine-Grained Evaluation for Text-to-Image Generation",
+   "authors": "J. Cho et al.",
+   "year": 2024,
+   "venue": "ICLR",
+   "url": "https://arxiv.org/abs/2310.18235",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://google.github.io/dsg",
+   "section": "10.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.4"
+   ]
+  },
+  {
+   "id": 179,
+   "name": "Flickr30k Entities",
+   "title": "Flickr30k Entities: Collecting Region-to-Phrase Correspondences for Richer Image-to-Sentence Models",
+   "authors": "B. A. Plummer et al.",
+   "year": 2015,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/1505.04870",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.1",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.1"
+   ]
+  },
+  {
+   "id": 180,
+   "name": "Visual Genome",
+   "title": "Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations",
+   "authors": "R. Krishna et al.",
+   "year": 2017,
+   "venue": "IJCV",
+   "url": "https://arxiv.org/abs/1602.07332",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.2",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.2"
+   ]
+  },
+  {
+   "id": 181,
+   "name": "VQA",
+   "title": "VQA: Visual Question Answering",
+   "authors": "S. Antol et al.",
+   "year": 2015,
+   "venue": "ICCV",
+   "url": "https://arxiv.org/abs/1505.00468",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.3",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.3"
+   ]
+  },
+  {
+   "id": 182,
+   "name": "VQA v2",
+   "title": "Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering",
+   "authors": "Y. Goyal et al.",
+   "year": 2017,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/1612.00837",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.3",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.3"
+   ]
+  },
+  {
+   "id": 183,
+   "name": "T2I-CompBench++",
+   "title": "T2I-CompBench++: An Enhanced and Comprehensive Benchmark for Compositional Text-to-Image Generation",
+   "authors": "K. Huang et al.",
+   "year": 2025,
+   "venue": "TPAMI",
+   "url": "https://arxiv.org/abs/2307.06350",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "10.4",
+   "levels": [],
+   "types": [
+    "Dataset"
+   ],
+   "cited_in": [
+    "10.4"
+   ]
+  },
+  {
+   "id": 184,
+   "name": "FOCUS",
+   "title": "FOCUS: Optimal Control for Multi-Entity World Modeling in Text-to-Image Generation",
+   "authors": "E. T. Bill et al.",
+   "year": 2026,
+   "venue": "CVPR",
+   "url": "https://arxiv.org/abs/2510.02315",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "https://github.com/ericbill21/focus",
+   "section": "5.4.1",
+   "levels": [
+    "object"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": []
+  },
+  {
+   "id": 185,
+   "name": "TIE",
+   "title": "Inference-Time CLIP Embedding Manipulation for Compositional Text-to-Image Alignment",
+   "authors": "S. Hong et al.",
+   "year": 2026,
+   "venue": "ICLR Workshop",
+   "url": "https://iclr.cc/virtual/2026/10020399",
+   "url_label": "ICLR",
+   "url_source": "searched",
+   "code": "",
+   "section": "6.4.3",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": []
+  },
+  {
+   "id": 186,
+   "name": "PCA_RCA",
+   "title": "Compositional Text-to-Image Synthesis with Training-Free Layout-Guided Diffusion",
+   "authors": "X. Gu et al.",
+   "year": 2026,
+   "venue": "IEEE TMM",
+   "url": "https://scholar.google.com/scholar?q=Compositional+text-to-image+synthesis+with+training-free+layout-guided+diffusion",
+   "url_label": "Scholar",
+   "url_source": "scholar",
+   "code": "",
+   "section": "6.4.4",
+   "levels": [
+    "attribute"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": []
+  },
+  {
+   "id": 187,
+   "name": "Learn-to-Steer",
+   "title": "Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image",
+   "authors": "S. E. Yiflach et al.",
+   "year": 2026,
+   "venue": "WACV",
+   "url": "https://arxiv.org/abs/2509.02295",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "8.4.1",
+   "levels": [
+    "relational"
+   ],
+   "types": [
+    "Inference-time"
+   ],
+   "cited_in": []
+  },
+  {
+   "id": 188,
+   "name": "ToddlerDiffusion",
+   "title": "ToddlerDiffusion: Interactive Structured Image Generation with Cascaded Schrödinger Bridge",
+   "authors": "E. M. BAKR et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "url": "https://arxiv.org/abs/2311.14542",
+   "url_label": "arXiv",
+   "url_source": "searched",
+   "code": "",
+   "section": "11",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "11.3"
+   ]
+  },
+  {
+   "id": 189,
+   "name": "IterComp",
+   "title": "IterComp: Iterative Composition-Aware Feedback Learning from Model Gallery for Text-to-Image Generation",
+   "authors": "X. Zhang et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "url": "https://openreview.net/forum?id=4w99NAikOE",
+   "url_label": "OpenReview",
+   "url_source": "paper",
+   "code": "",
+   "section": "11",
+   "levels": [],
+   "types": [],
+   "cited_in": [
+    "11.4"
+   ]
+  }
+ ]
+}

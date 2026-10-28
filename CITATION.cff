@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this paper list, please cite the survey below."
+title: "Awesome Semantic Fidelity in Text-to-Image Diffusion Models"
+repository-code: "https://github.com/USERNAME/Awesome-Semantic-Fidelity-T2I"
+authors:
+  - family-names: "Pandey"
+    given-names: "Saket"
+    affiliation: "Indian Institute of Technology Roorkee"
+  - family-names: "Chib"
+    given-names: "Pranav Singh"
+    affiliation: "Indian Institute of Technology Roorkee"
+  - family-names: "Singh"
+    given-names: "Pravendra"
+    affiliation: "Indian Institute of Technology Roorkee"
+preferred-citation:
+  type: article
+  title: "Semantic Fidelity Challenges in Diffusion-Based Text-to-Image Models: A Survey"
+  authors:
+    - family-names: "Pandey"
+      given-names: "Saket"
+      affiliation: "Indian Institute of Technology Roorkee"
+    - family-names: "Chib"
+      given-names: "Pranav Singh"
+      affiliation: "Indian Institute of Technology Roorkee"
+    - family-names: "Singh"
+      given-names: "Pravendra"
+      affiliation: "Indian Institute of Technology Roorkee"
+  journal: "Under review"
+  year: 2026

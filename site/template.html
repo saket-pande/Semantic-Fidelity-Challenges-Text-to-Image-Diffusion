@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Semantic Fidelity in Text-to-Image Diffusion</title>
+<meta name="description" content="Paper list for the survey “Semantic Fidelity Challenges in Diffusion-Based Text-to-Image Models: A Survey”. __N__ papers on missing objects, attribute binding, counting and spatial relations, organised by the survey's taxonomy, with links to every paper and code.">
+<meta name="keywords" content="semantic fidelity, text-to-image, diffusion models, compositional generation, attribute binding, object counting, spatial relationships, survey, awesome list">
+<meta name="author" content="Saket Pandey, Pranav Singh Chib, Pravendra Singh">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Semantic Fidelity in Text-to-Image Diffusion: survey paper list">
+<meta property="og:description" content="__N__ papers on object, attribute, numerical and relational fidelity in text-to-image diffusion models, organised by the survey's taxonomy.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">__JSONLD__</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='13' height='13' rx='2' fill='%235F7891'/%3E%3Crect x='17' y='2' width='13' height='13' rx='2' fill='%23A0595F'/%3E%3Crect x='2' y='17' width='13' height='13' rx='2' fill='%239A7B2F'/%3E%3Crect x='17' y='17' width='13' height='13' rx='2' fill='%233F7C7D'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#F5F6F8; --surface:#FFFFFF; --ink:#18202B; --muted:#5B6574; --faint:#8B94A1; --line:#DCE0E6;
+  --obj:#5F7891; --att:#A0595F; --num:#93762A; --rel:#3F7C7D;
+  --obj-t:#E5EBF1; --att-t:#F3E0DF; --num-t:#F3ECD7; --rel-t:#DCEDEC;
+  --focus:#2C4A6E;
+  --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11151B; --surface:#181D25; --ink:#E7EAEF; --muted:#A0A9B5; --faint:#727C89; --line:#2A313B;
+    --obj:#93AAC2; --att:#D3959A; --num:#D2B46C; --rel:#7DB9B7;
+    --obj-t:#1E2833; --att-t:#2E2124; --num-t:#2C2719; --rel-t:#1A2B2B; --focus:#9CB8DA; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11151B; --surface:#181D25; --ink:#E7EAEF; --muted:#A0A9B5; --faint:#727C89; --line:#2A313B;
+  --obj:#93AAC2; --att:#D3959A; --num:#D2B46C; --rel:#7DB9B7;
+  --obj-t:#1E2833; --att-t:#2E2124; --num-t:#2C2719; --rel-t:#1A2B2B; --focus:#9CB8DA; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:5.5rem}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media (max-width:640px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+
+/* ---------- masthead ---------- */
+.mast{padding:28px 0 0}
+.mast-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:600;font-size:15px;color:var(--muted);text-decoration:none}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink);font:500 14px var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn svg{width:16px;height:16px;flex:none}
+.star-count{padding-left:8px;margin-left:2px;border-left:1px solid color-mix(in srgb,var(--bg) 35%,transparent);font-variant-numeric:tabular-nums}
+
+/* ---------- hero: the prompt ---------- */
+.hero{padding:56px 0 36px}
+.hero h1{text-wrap:balance;font:600 clamp(26px,3.4vw,38px)/1.15 var(--sans);letter-spacing:-.015em;margin:0 0 10px;max-width:24ch}
+.hero .by{color:var(--muted);margin:0 0 40px;font-size:15px}
+.prompt-box{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:28px 28px 22px}
+.prompt-label{font-size:13px;color:var(--faint);margin:0 0 6px}
+.prompt{font:italic 400 clamp(28px,4.6vw,52px)/1.25 var(--serif);margin:0 0 26px;letter-spacing:-.01em}
+.tok{background:none;border:0;padding:0 2px;margin:0;font:inherit;color:inherit;cursor:pointer;
+  text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.18em;border-radius:4px}
+.tok[data-l=object]{text-decoration-color:var(--obj)}
+.tok[data-l=attribute]{text-decoration-color:var(--att)}
+.tok[data-l=numerical]{text-decoration-color:var(--num)}
+.tok[data-l=relational]{text-decoration-color:var(--rel)}
+.tok:hover,.tok.on{background:var(--tint)}
+.tok[data-l=object]{--tint:var(--obj-t)} .tok[data-l=attribute]{--tint:var(--att-t)}
+.tok[data-l=numerical]{--tint:var(--num-t)} .tok[data-l=relational]{--tint:var(--rel-t)}
+.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:860px){.levels{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.levels{gap:8px}.lv{padding:10px 12px}.lv span{font-size:13px}}
+.lv{all:unset;box-sizing:border-box;cursor:pointer;border-radius:10px;padding:12px 14px;border:1px solid var(--line);display:block}
+.lv:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.lv:hover{border-color:var(--c)}
+.lv.on{background:var(--t);border-color:var(--c)}
+.lv b{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px}
+.lv b i{width:10px;height:10px;border-radius:3px;background:var(--c)}
+.lv span{display:block;color:var(--muted);font-size:14px;margin-top:3px}
+.lv small{color:var(--faint);font-size:13px}
+.lv[data-l=object]{--c:var(--obj);--t:var(--obj-t)} .lv[data-l=attribute]{--c:var(--att);--t:var(--att-t)}
+.lv[data-l=numerical]{--c:var(--num);--t:var(--num-t)} .lv[data-l=relational]{--c:var(--rel);--t:var(--rel-t)}
+.hint{color:var(--faint);font-size:13px;margin:14px 0 0}
+
+/* ---------- toolbar ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.search{flex:1 1 220px;position:relative}
+@media (max-width:640px){.bar{position:static}.search{flex-basis:100%}}
+.search input{width:100%;height:40px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  padding:0 12px 0 38px;font:400 15px var(--sans)}
+.search input:focus{outline:2px solid var(--focus);outline-offset:0;border-color:transparent}
+.search svg{position:absolute;left:12px;top:12px;width:16px;height:16px;color:var(--faint)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{height:32px;padding:0 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  font:500 13px var(--sans);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+select.chip{padding-right:8px}
+.count{font-size:13px;color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums;white-space:nowrap}
+.clear{background:none;border:0;color:var(--focus);font:500 13px var(--sans);cursor:pointer;text-decoration:underline;padding:0}
+
+/* ---------- body ---------- */
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;padding-top:28px;padding-bottom:64px}
+@media (max-width:900px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}}
+.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:14px}
+.toc a{display:flex;justify-content:space-between;gap:8px;text-decoration:none;color:var(--muted);padding:4px 8px;border-radius:6px}
+.toc a:hover{color:var(--ink);background:var(--surface)}
+.toc a.dim{opacity:.4}
+.toc a span{font-variant-numeric:tabular-nums;color:var(--faint)}
+.toc .g{font-weight:600;color:var(--ink);margin-top:6px}
+.toc .s{padding-left:20px;font-size:13px}
+
+.group{margin-bottom:44px}
+.group>h2{font:600 24px/1.2 var(--sans);letter-spacing:-.01em;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+.group>h2 .sec{font-size:14px;color:var(--faint);font-weight:500}
+.group>p{color:var(--muted);margin:0 0 14px;max-width:70ch;font-size:15px}
+.sub{margin:22px 0 0}
+.sub h3{font:600 15px/1.3 var(--sans);margin:0 0 8px;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.sub h3 .sec{color:var(--faint);font-weight:500;font-size:13px}
+.list{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.p{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:14px 16px;border-top:1px solid var(--line);position:relative}
+.p:first-child{border-top:0}
+.p .t{font-size:15.5px;line-height:1.4;margin:0}
+.p .t a{text-decoration:none}
+.p .t a:hover{text-decoration:underline;text-underline-offset:2px}
+.p .nm{font-weight:700;margin-right:4px}
+.p .meta{font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.ven{font-weight:600;color:var(--ink)}
+.ref{color:var(--faint);font-variant-numeric:tabular-nums}
+.dots{display:inline-flex;gap:4px;align-items:center}
+.dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+.dot.object{background:var(--obj)} .dot.attribute{background:var(--att)} .dot.numerical{background:var(--num)} .dot.relational{background:var(--rel)}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:5px;padding:0 6px;color:var(--muted)}
+.links{display:flex;gap:6px;align-items:start;grid-row:1 / span 2;grid-column:2}
+.lk{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 10px;border-radius:7px;border:1px solid var(--line);
+  font:500 13px var(--sans);text-decoration:none;color:var(--ink);white-space:nowrap}
+.lk:hover{border-color:var(--muted)}
+.lk svg{width:13px;height:13px}
+@media (max-width:640px){.p{grid-template-columns:1fr}.links{grid-row:auto;grid-column:1}}
+mark{background:var(--num-t);color:inherit;border-radius:2px;padding:0 1px}
+.empty{padding:40px 0;color:var(--muted)}
+.empty button{margin-top:10px}
+
+/* ---------- cite ---------- */
+.cite{border-top:1px solid var(--line);padding:48px 0 64px}
+.cite h2{font:600 24px/1.2 var(--sans);margin:0 0 8px}
+.cite p{color:var(--muted);max-width:68ch;margin:0 0 16px}
+.bib{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;overflow:auto}
+.bib pre{margin:0;font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre}
+.bib .btn{position:absolute;top:12px;right:12px;height:30px;font-size:13px}
+.foot{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;color:var(--faint);font-size:13px;margin-top:28px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;
+  font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-top">
+      <a class="brand" href="#top" id="top">Semantic Fidelity in T2I Diffusion</a>
+      <div class="actions">
+        <a class="btn" id="paperBtn" href="#cite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>Read the survey</a>
+        <a class="btn" href="#cite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h4v4H7zM13 7h4v4h-4zM7 11c0 3-1 5-3 6M13 11c0 3-1 5-3 6"/></svg>Cite</a>
+        <a class="btn primary" id="starBtn" href="https://github.com/__REPO__" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>Star on GitHub<span class="star-count" id="stars" hidden></span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Semantic Fidelity Challenges in Diffusion-Based Text-to-Image Models</h1>
+    <p class="by">Paper list for the survey by Saket Pandey, Pranav Singh Chib and Pravendra Singh, IIT Roorkee</p>
+    <div class="prompt-box">
+      <p class="prompt-label">A prompt can fail in four ways. Pick a level to see the papers that address it.</p>
+      <p class="prompt" aria-label="Example prompt: two red cubes to the left of a cat">
+        “<button class="tok" data-l="numerical">Two</button> <button class="tok" data-l="attribute">red</button> <button class="tok" data-l="object">cubes</button> <button class="tok" data-l="relational">to the left of</button> a <button class="tok" data-l="object">cat</button>”
+      </p>
+      <div class="levels" id="levels">
+        <button class="lv" data-l="object"><b><i></i>Object</b><span>The cat never appears.</span><small id="c-object"></small></button>
+        <button class="lv" data-l="attribute"><b><i></i>Attribute</b><span>The cubes come out blue.</span><small id="c-attribute"></small></button>
+        <button class="lv" data-l="numerical"><b><i></i>Numerical</b><span>Three cubes instead of two.</span><small id="c-numerical"></small></button>
+        <button class="lv" data-l="relational"><b><i></i>Relational</b><span>The cubes end up on the right.</span><small id="c-relational"></small></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bar" role="search">
+  <div class="wrap">
+    <label class="search"><span hidden>Search papers</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search by method, title, author or venue" autocomplete="off">
+    </label>
+    <div class="chips" id="types" aria-label="Filter by approach"></div>
+    <select class="chip" id="year" aria-label="Filter by year">
+      <option value="">All years</option>
+    </select>
+    <select class="chip" id="sort" aria-label="Sort order">
+      <option value="survey">Survey order</option>
+      <option value="new">Newest first</option>
+    </select>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+</div>
+
+<main class="wrap layout">
+  <nav class="toc" id="toc" aria-label="Taxonomy"></nav>
+  <div id="content"></div>
+</main>
+
+<section class="cite" id="cite">
+  <div class="wrap">
+    <h2>Cite the survey</h2>
+    <p>If this list helps your research, please cite the survey and star the repository. Know a paper that belongs here? Open an issue or a pull request on GitHub.</p>
+    <div class="bib"><button class="btn" id="copyBib">Copy BibTeX</button><pre id="bibtex">__BIBTEX__</pre></div>
+    <div class="foot">
+      <span>Links point to arXiv or the official open-access version where one exists. Numbers in brackets match the survey's reference list.</span>
+      <span>Last updated __DATE__</span>
+    </div>
+  </div>
+</section>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const DATA = __DATA__;
+const LEVELS = {object:'Object',attribute:'Attribute',numerical:'Numerical',relational:'Relational'};
+const TYPES = ['Training-time','Inference-time','Analysis','Metric','Dataset'];
+const ICON_DOC='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>';
+const ICON_CODE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>';
+const state={q:'',levels:new Set(),types:new Set(),year:'',sort:'survey'};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const groupDesc={
+  surveys:'Earlier surveys on diffusion models, quality assessment and controllable generation.',
+  foundations:'Diffusion, attention and conditioning, latent diffusion and the text-to-image models the survey builds on.',
+  object:'Every entity named in the prompt should appear in the image.',
+  attribute:'Colours, textures, shapes and styles should attach to the right object.',
+  numerical:'The image should contain exactly the number of instances the prompt asks for.',
+  relational:'Objects should stand in the spatial or semantic relation the prompt describes.',
+  metrics:'How visual quality and prompt alignment are measured.',
+  datasets:'Prompt sets and benchmarks used to evaluate semantic fidelity.',
+  beyond:'Work on general compositionality and directions beyond the four levels.'
+};
+
+// ---------- persistence of light per-viewer preferences ----------
+function save(){try{localStorage.setItem('sf-filters',JSON.stringify({sort:state.sort}))}catch(e){}}
+try{const s=JSON.parse(localStorage.getItem('sf-filters')||'{}');if(s.sort)state.sort=s.sort}catch(e){}
+
+// ---------- read filters from the URL so views can be shared ----------
+const params=new URLSearchParams(location.search);
+if(params.get('q'))state.q=params.get('q');
+(params.get('level')||'').split(',').filter(l=>LEVELS[l]).forEach(l=>state.levels.add(l));
+
+// ---------- controls ----------
+TYPES.forEach(t=>{const b=document.createElement('button');b.className='chip';b.textContent=t;b.setAttribute('aria-pressed','false');
+  b.onclick=()=>{state.types.has(t)?state.types.delete(t):state.types.add(t);b.setAttribute('aria-pressed',state.types.has(t));render()};$('#types').append(b)});
+[...new Set(DATA.papers.map(p=>p.year))].sort((a,b)=>b-a).forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;$('#year').append(o)});
+$('#year').onchange=e=>{state.year=e.target.value;render()};
+$('#sort').value=state.sort;$('#sort').onchange=e=>{state.sort=e.target.value;save();render()};
+$('#q').value=state.q;$('#q').oninput=e=>{state.q=e.target.value;render()};
+function toggleLevel(l){state.levels.has(l)?state.levels.delete(l):state.levels.add(l);render();
+  const top=document.querySelector('.bar').getBoundingClientRect().top+scrollY;
+  const sticky=getComputedStyle(document.querySelector('.bar')).position==='sticky';
+  window.scrollTo({top:sticky?top:document.getElementById('content').getBoundingClientRect().top+scrollY-12})}
+document.querySelectorAll('.tok,.lv').forEach(b=>b.addEventListener('click',()=>toggleLevel(b.dataset.l)));
+for(const l in LEVELS)$('#c-'+l).textContent=DATA.papers.filter(p=>p.levels.includes(l)).length+' papers';
+if(DATA.meta.paper_url){$('#paperBtn').href=DATA.meta.paper_url;$('#paperBtn').target='_blank'}else{$('#paperBtn').remove()}
+
+function clearAll(){state.q='';state.levels.clear();state.types.clear();state.year='';$('#q').value='';$('#year').value='';
+  document.querySelectorAll('#types .chip').forEach(b=>b.setAttribute('aria-pressed','false'));render()}
+
+function match(p){
+  if(state.levels.size&&!p.levels.some(l=>state.levels.has(l)))return false;
+  if(state.types.size&&!p.types.some(t=>state.types.has(t)))return false;
+  if(state.year&&String(p.year)!==state.year)return false;
+  if(state.q){const h=(p.name+' '+p.title+' '+p.authors+' '+p.venue+' '+p.year+' ['+p.id+']').toLowerCase();
+    return state.q.toLowerCase().split(/\s+/).filter(Boolean).every(w=>h.includes(w))}
+  return true}
+function hl(s){if(!state.q.trim())return esc(s);let out=esc(s);
+  state.q.trim().split(/\s+/).filter(w=>w.length>1).forEach(w=>{const re=new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+    out=out.replace(/(<[^>]*>)|([^<]+)/g,(m,tag,txt)=>tag?tag:txt.replace(re,'<mark>$1</mark>'))});return out}
+
+function row(p){
+  const name=p.name&&!p.title.toLowerCase().startsWith(p.name.toLowerCase())?`<span class="nm">${hl(p.name)}</span>`:'';
+  const dots=p.levels.map(l=>`<span class="dot ${l}" title="${LEVELS[l]} level"></span>`).join('');
+  const tags=p.types.map(t=>`<span class="tag">${t}</span>`).join(' ');
+  const code=p.code?`<a class="lk" href="${esc(p.code)}" target="_blank" rel="noopener">${ICON_CODE}${/github\.com/.test(p.code)?'Code':'Project'}</a>`:'';
+  return `<li class="p"><p class="t"><a href="${esc(p.url)}" target="_blank" rel="noopener">${name}${hl(p.title)}</a></p>
+  <div class="meta"><span class="ven">${esc(p.venue)} ${p.year}</span><span>${hl(p.authors)}</span>${dots?`<span class="dots">${dots}</span>`:''}${tags}<span class="ref" title="Reference number in the survey">[${p.id}]</span></div>
+  <div class="links"><a class="lk" href="${esc(p.url)}" target="_blank" rel="noopener">${ICON_DOC}${esc(p.url_label)}</a>${code}</div></li>`}
+
+function render(){
+  document.querySelectorAll('.tok,.lv').forEach(b=>{const on=state.levels.has(b.dataset.l);b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+  const shown=DATA.papers.filter(match);
+  const bySec={};shown.forEach(p=>(bySec[p.section]=bySec[p.section]||[]).push(p));
+  let html='',toc='';
+  DATA.taxonomy.forEach(g=>{
+    const subs=g.subsections.map(s=>({...s,items:(bySec[s.id]||[]).slice().sort((a,b)=>state.sort==='new'?(b.year-a.year||a.id-b.id):a.id-b.id)}));
+    const n=subs.reduce((a,s)=>a+s.items.length,0);
+    toc+=`<a class="g${n?'':' dim'}" href="#${g.id}">${g.title}<span>${n}</span></a>`;
+    if(g.subsections.length>1)subs.forEach(s=>toc+=`<a class="s${s.items.length?'':' dim'}" href="#s-${s.id.replace(/\./g,'-')}">${s.title.replace(/^Inference: (.)/,(m,c)=>c.toUpperCase())}<span>${s.items.length}</span></a>`);
+    if(!n)return;
+    html+=`<section class="group" id="${g.id}"><h2>${g.title}${g.paper_section?`<span class="sec">§${g.paper_section}</span>`:''}</h2><p>${groupDesc[g.id]||''}</p>`;
+    subs.forEach(s=>{if(!s.items.length)return;
+      html+=`<div class="sub" id="s-${s.id.replace(/\./g,'-')}">${g.subsections.length>1?`<h3>${s.title}<span class="sec">§${s.id}</span></h3>`:''}<ul class="list">${s.items.map(row).join('')}</ul></div>`});
+    html+='</section>'});
+  if(!shown.length)html=`<div class="empty"><p>No papers match these filters.</p><button class="btn" onclick="clearAll()">Clear filters</button></div>`;
+  $('#content').innerHTML=html;$('#toc').innerHTML=toc;
+  const active=state.q||state.levels.size||state.types.size||state.year;
+  $('#count').innerHTML=`${shown.length} of ${DATA.papers.length} papers`+(active?' <button class="clear" onclick="clearAll()">Clear</button>':'');
+  const u=new URLSearchParams();if(state.q)u.set('q',state.q);if(state.levels.size)u.set('level',[...state.levels].join(','));
+  try{history.replaceState(null,'',(u.toString()?'?'+u:location.pathname)+location.hash)}catch(e){}
+}
+render();
+
+// ---------- cite & stars ----------
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+$('#copyBib').onclick=()=>{navigator.clipboard.writeText($('#bibtex').textContent).then(()=>toast('BibTeX copied'),()=>toast('Select the text to copy it'))};
+if(!/USERNAME/.test(DATA.meta.repo))fetch('https://api.github.com/repos/'+DATA.meta.repo).then(r=>r.ok?r.json():null).then(j=>{
+  if(j&&j.stargazers_count!=null){const s=$('#stars');s.textContent=j.stargazers_count.toLocaleString();s.hidden=false}}).catch(()=>{});
+</script>
+</body>
+</html>
